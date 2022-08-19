@@ -1,0 +1,7 @@
+/* pages/editEvent/editEvent.wxss */
+page {
+  height: 100%;
+}
+.blue {
+  color: rgb(83, 137, 236);
+}

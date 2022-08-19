@@ -1,0 +1,63 @@
+<!--pages/record/record.wxml-->
+<!-- <view class="home-page-header">
+	<view class="search" bind:tap="navToSearchPage">
+		<t-search
+		  t-class-input="t-search__input"
+		  t-class-input-container="t-search__input-container"
+		  placeholder="种植牙"
+		  leftIcon=""
+		  disabled
+		>
+			<t-icon
+			  slot="left-icon"
+			  prefix="wr"
+			  name="search"
+			  size="40rpx"
+			  color="#bbb"
+			/>
+		</t-search>
+	</view>
+</view> -->
+<view class="home-page-container">
+	<t-tabs
+	  t-class="t-tabs"
+	  t-class-active="t-class-item"
+	  t-class-track="t-class-track"
+	  defaultValue="{{0}}"
+	  bind:change="tabChangeHandle"
+	>
+		<t-tab-panel
+		  wx:for="{{tabList}}"
+		  wx:for-index="index"
+		  wx:key="index"
+		  label="{{item.text}}"
+		  value="{{item.key}}"
+		/>
+	</t-tabs>
+</view>
+<view wx:for="{{records}}" wx:key="index">
+  <view>
+    <view style="display: flex; flex-direction: row;padding:20rpx; align-items: center;">
+      <t-icon name="user" size="small"/>
+      <view class="blue" style="padding-left: 30rpx;min-width: 200rpx;">{{item.name}}</view>
+      <view style="display: flex;justify-content: end;justify-content: end;width: 100%;flex-direction: row-reverse;">{{item.time}} {{item.action}}</view>
+    </view>
+    <view style="display: flex; flex-direction: row;padding:20rpx; align-items: center;">
+      <t-icon name="mobile" size="small"/>
+      <view style="padding-left: 30rpx;">{{item.phone}}</view>
+      <view class="blue" style="display: flex;justify-content: end;font-size: small;width: 100%;flex-direction: row-reverse;">查看详情</view>
+    </view>
+    <view style="background: rgb(231, 231, 231); height: 1rpx;" />
+  </view>
+</view>
+	<t-toast id="t-toast" />
+<view style="text-align: center;background: white;margin-top: 20rpx; width: 100%;" wx:if="{{pageLoading}}">
+    <t-loading
+      theme="circular"
+      size="40rpx"
+      loading
+      t-class-indicator="t-class-indicator"
+    >
+      <span slot="text" class="loading-text">加载中...</span>
+    </t-loading>
+</view>

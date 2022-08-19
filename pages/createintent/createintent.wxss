@@ -1,0 +1,59 @@
+/* pages/createintent/createintent.wxss */
+page {
+  height: 100%;
+}
+
+.blue {
+  color: rgb(83, 137, 236);
+}
+
+.input-example {
+  padding-bottom: constant(safe-area-inset-bottom);
+  /* 兼容 iOS < 11.2 */
+  padding-bottom: env(safe-area-inset-bottom);
+  /* 兼容 iOS >= 11.2 */
+}
+.input-example .cell {
+  margin-bottom: 32rpx;
+}
+.input-example .verify {
+  font-size: 32rpx;
+  color: #0052d9;
+}
+.input-example .error-msg {
+  text-align: right !important;
+}
+
+.area-picker-demo {
+  height: 100rpx;
+  overflow: hidden;
+}
+.area-picker-demo .demo-section__desc {
+  margin-top: 32rpx;
+  margin-bottom: 32rpx;
+}
+.area-picker-demo .pannel-item {
+  display: flex;
+  align-items: center;
+  height: 96rpx;
+  padding: 0 32rpx;
+  font-size: 32rpx;
+  margin-bottom: 32rpx;
+  background-color: #fff;
+}
+.area-picker-demo .pannel-item.last {
+  margin-bottom: -13rpx;
+}
+.area-picker-demo .pannel-label {
+  width: 160rpx;
+  margin-right: 32rpx;
+}
+.area-picker-demo .pannel-text {
+  flex: 1;
+  color: #000;
+  opacity: 0.9;
+}
+.area-picker-demo .pannel-text.empty {
+  opacity: 0.26;
+}
+

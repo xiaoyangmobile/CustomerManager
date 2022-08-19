@@ -1,0 +1,2 @@
+<!--pages/createEvent/createEvent.wxml-->
+<view style="height: 50rpx;background: rgb(233, 233, 233);padding-left: 20rpx;">第一阶段</view>

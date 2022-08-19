@@ -1,0 +1,15 @@
+<!--pages/eventlist/eventlist.wxml-->
+<view style="display: flex;flex-direction: column;height: 100%;">
+  <view style="flex: 1 1 auto;">
+    <view wx:for="{{items}}" wx:key="index">
+      <view style="padding-top: 2rpx;">
+        <view style="height: 70rpx;background: rgb(235, 234, 234);align-items: center;display: flex;padding-left: 20rpx;font-size: 25rpx;">
+          <view style="flex: 1 1 auto;">{{item.eventName}}</view>
+          <view class="blue" style="margin-right: 20rpx;">{{item.step}}</view>
+          <button bindtap="toEditEvent" size="mini" style="margin-right: 20rpx;">评价</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <button bindtap="toCreateEvent" type="default" plain="true" style="margin: 40rpx;flex: 0 1 auto;">新增事项</button>
+</view>

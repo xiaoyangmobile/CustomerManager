@@ -1,0 +1,9 @@
+<!--pages/intent/intent.wxml-->
+<view style="display: flex;flex-direction: column;height: 100%;">
+  <view style="flex: 1 1 auto;">
+    
+  </view>
+  <button type="default" plain="true" style="margin: 20rpx;flex: 0 1 auto;">新增客户</button>
+</view>
+
+

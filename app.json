@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/home/home",
+    "pages/usercenter/usercenter",
+    "pages/record/record",
+    "pages/customer/customer",
+    "pages/detail/detail",
+    "pages/intent/intent",
+    "pages/intentlist/intentlist",
+    "pages/createintent/createintent",
+    "pages/createtarget/createtarget",
+    "pages/eventlist/eventlist",
+    "pages/createEvent/createEvent",
+    "pages/editEvent/editEvent"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#666666",
+    "selectedColor": "#FF5F15",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/record/record",
+        "text": "拜访记录"
+      },
+      {
+        "pagePath": "pages/customer/customer",
+        "text": "客户"
+      },
+      {
+        "pagePath": "pages/usercenter/usercenter",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

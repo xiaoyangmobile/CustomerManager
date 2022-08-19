@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "新增采购意向",
+  "usingComponents": {
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-picker": "../../miniprogram_npm/tdesign-miniprogram/picker/picker",
+    "t-picker-column": "../../miniprogram_npm/tdesign-miniprogram/picker/picker-column"
+  }
+}

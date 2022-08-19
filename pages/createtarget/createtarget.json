@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "添加跟进",
+  "usingComponents": {
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-picker": "../../miniprogram_npm/tdesign-miniprogram/picker/picker",
+    "t-picker-column": "../../miniprogram_npm/tdesign-miniprogram/picker/picker-column",
+    "t-textarea": "../../miniprogram_npm/tdesign-miniprogram/textarea/textarea"
+  }
+}

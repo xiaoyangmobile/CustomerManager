@@ -1,0 +1,38 @@
+<!--pages/home/home.wxml-->
+<view class="top-card__main">
+  <view class="top-text" style="font-size: 24rpx;">业绩目标</view>
+  <view style="height: 40rpx;" />
+  <view class="progress-box">
+    <progress percent="20" color="rgb(83, 137, 236)" stroke-width="3" />
+  </view>
+  <view class="progress-value" style="margin-top: 10rpx;">
+    <view style="min-width: {{valuePersent}}%;" />
+    <view class="blue">20w</view>
+    <view class="total">{{50}}w</view>
+  </view>
+  <view class="progress-value" style="margin-top: 50rpx;">
+    <t-icon name="round" size="small" style="margin-left: 50rpx;"/>
+    <view style="margin-left: 20rpx;">订单数： 50</view>
+    <t-icon name="round" size="small" style="margin-left: 90rpx;"/>
+    <view style="margin-left: 20rpx;">拜访数： 100</view>
+  </view>
+  <view class="center" style="margin-top: 50rpx;">
+    <view class="blue" style="font-size: 24rpx;">销售转化率：50%  </view>
+    <view style="margin-left: 20rpx;font-size: 24rpx;">较上月：↓</view>
+  </view>
+
+</view>
+
+<view class="top-card__main" style="margin-top: 20rpx;">
+  <view class="top-text" style="font-size: 24rpx;">销售日志</view>
+  <view wx:for="{{records}}" wx:key="index">
+    <view bindtap="toDetail" id="{{index}}" class="list-item">
+      <view class="progress-value">
+        <view>| {{item.title}}</view>
+        <view class="total" style="color: gray;font-size: small;">{{item.time}}</view>
+      </view>
+      <view style="padding-left: 20rpx;color: gray;font-size: small;margin-top: 20rpx;">{{item.content}}</view>
+      <view class="blue" style="display: flex;flex-direction: row-reverse;margin-top: 20rpx;font-size: small;">查看详情</view>
+    </view>
+  </view>
+</view>

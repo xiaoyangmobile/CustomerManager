@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "采购意向列表",
+  "usingComponents": {
+    "t-icon": "tdesign-miniprogram/icon/icon"
+  }
+}

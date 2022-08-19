@@ -1,0 +1,7 @@
+/* pages/eventlist/eventlist.wxss */
+page {
+  height: 100%;
+}
+.blue {
+  color: rgb(83, 137, 236);
+}

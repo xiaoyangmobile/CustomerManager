@@ -1,0 +1,30 @@
+<!--pages/createintent/createintent.wxml-->
+<view style="display: flex;flex-direction: column;height: 100%;" class="input-example">
+  <view style="flex: 1 1 auto;">
+    <view class="cell">
+      <t-input label="预计金额" placeholder="填写金额" suffix="万" type="number" value="{{amount}}"/>
+    </view>
+    <view class="cell">
+      <t-input label="数量" placeholder="填写个数" suffix="个" type="number" value="{{count}}"/>
+    </view>
+    <view class="area-picker-demo">
+      <view class="pannel-item" bind:tap="onClickPicker" data-index="{{1}}">
+      <view class="pannel-label">产品</view>
+      <view class="pannel-text {{selectedCityValue ? '' : 'empty'}}">{{selectedCityValue || '选择产品'}}</view>
+      <t-icon name="chevron-right" color="rgba(0, 0, 0, 0.26)" size="24px" />
+    </view>
+    </view>
+    
+  </view>
+  <button bindtap="onBack" type="default" plain="true" style="margin: 40rpx;flex: 0 1 auto;">提交</button>
+  <t-picker
+    visible="{{picker1Visible}}"
+    cancelBtn="取消"
+    confirmBtn="确认"
+    bindchange="onPickerChange"
+    bindconfirm="onPicker1Confirm"
+    bindcancel="onPicker1Cancel"
+  >
+    <t-picker-column options="{{products}}" value="{{selectedCityValue}}" bindchange="onColumnChange"></t-picker-column>
+  </t-picker>
+</view>

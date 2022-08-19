@@ -1,0 +1,56 @@
+<!--pages/detail/detail.wxml-->
+<view style="display: flex; flex-direction: row;padding-left:20rpx; padding-bottom: 20rpx;padding-top: 20rpx; align-items: center;">
+  <t-icon name="user" size="small" />
+  <view class="blue" style="padding-left: 30rpx;font-size: 25rpx;">{{userInfo.name}}</view>
+  <view style="padding-left: 30rpx;font-size: 25rpx;">{{userInfo.title}}</view>
+  <view style="margin: auto; margin-right: 20rpx;font-size: 25rpx; color: gray;">{{lastTime}}</view>
+</view>
+<view style="display: flex; flex-direction: row;padding-left:20rpx;padding-bottom: 20rpx; align-items: center;font-size: 25rpx;">
+  <view>{{userInfo.phone}}</view>
+  <t-icon name="mobile" size="small" style="padding-left: 20rpx;" />
+</view>
+<view style="height: 70rpx;background: lightgray;align-items: center;display: flex;padding-left: 20rpx;font-size: 25rpx;">
+  基本资料
+  <view style="margin-left: 20rpx;color: palevioletred;">{{userInfo.target}}</view>
+  <view style="margin: auto; margin-right: 20rpx;" class="blue">编辑</view>
+</view>
+<view style="color: gray;line-height: 30rpx;padding-left: 20rpx;">
+  <text>
+    {{userInfo.city}}\n
+    {{userInfo.county}}\n
+    {{userInfo.company}}\n
+    {{userInfo.unitId}}\n
+    {{userInfo.system}}\n
+    {{userInfo.useCount}}\n
+  </text>
+</view>
+<view style="height: 70rpx;background: lightgray;align-items: center;display: flex;padding-left: 20rpx;font-size: 25rpx;">
+  采购意向
+  <view bindtap="toIntentList" style="margin: auto; margin-right: 20rpx;" class="blue">更多</view>
+</view>
+<view style="color: gray;padding-left: 20rpx;align-items: center;display: flex;height: 70rpx;">
+  基台
+  <view style="margin: auto; margin-right: 20rpx;">10</view>
+</view>
+<view style="height: 70rpx;background: lightgray;align-items: center;display: flex;padding-left: 20rpx;font-size: 25rpx;">
+  拜访记录
+  <view bindtap="toCreateTarget" style="margin: auto; margin-right: 20rpx;" class="blue">添加跟进</view>
+</view>
+<view wx:for="{{records}}" wx:key="index">
+    <view id="{{index}}" class="list-item">
+      <view style="align-items: center;display: flex;padding-left: 20rpx;margin-top: 20rpx;">
+        <view>| 拜访跟进</view>
+        <view style="color: gray;margin: auto; margin-right: 20rpx;">{{item.time}}</view>
+      </view>
+      <view style="padding-left: 35rpx;color: gray;font-size: small;margin-top: 10rpx;">
+        <text style="line-height: 1.5em;letter-spacing:2rpx;">{{item.detail}}</text>
+      </view>
+    </view>
+  </view>
+  <view style="display: flex;flex-direction: row;margin-top: 30rpx;background: rgb(83, 137, 236);height: 70rpx;color: white;align-items: center;">
+    <view bindtap="onTarget" style="flex: 1;display: flex;justify-content: center;align-items: center;">标记意向</view>|
+    <view style="flex: 1;display: flex;justify-content: center;align-items: center;">查看订单</view>|
+    <view bindtap="toEventList" style="flex: 1;display: flex;justify-content: center;align-items: center;">重要事项</view>
+  </view>
+<view style="height: 30rpx;"/>
+<t-dialog id="t-dialog" />

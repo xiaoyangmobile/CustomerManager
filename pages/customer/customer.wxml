@@ -1,0 +1,28 @@
+<!--pages/customer/customer.wxml-->
+<view style="display: flex;flex-direction: column;height: 100%;">
+  <view style="flex: 1 1 auto;">
+    <view style="background: rgb(231, 231, 231); height: 1rpx;" />
+    <view wx:for="{{records}}" wx:key="index">
+      <view>
+        <view style="display: flex; flex-direction: row;padding-left: 20rpx;padding-top: 40rpx;padding-bottom: 40rpx;padding-right: 20rpx; align-items: center;">
+          <t-icon name="user" size="small"/>
+          <view class="blue" style="padding-left: 30rpx;min-width: 200rpx;">{{item.name}}</view>
+          <view style="display: flex;justify-content: end;justify-content: end;width: 100%;flex-direction: row-reverse;font-size: small;">{{item.action}}</view>
+        </view>
+        <view style="background: rgb(231, 231, 231); height: 1rpx;" />
+      </view>
+    </view>
+    <view style="text-align: center;background: white;margin-top: 20rpx; width: 100%;" wx:if="{{pageLoading}}">
+        <t-loading
+          theme="circular"
+          size="40rpx"
+          loading
+          t-class-indicator="t-class-indicator"
+        >
+          <span slot="text" class="loading-text">加载中...</span>
+        </t-loading>
+    </view>
+  </view>
+  <button type="default" plain="true" style="margin: 20rpx;flex: 0 1 auto;">新增客户</button>
+</view>
+
