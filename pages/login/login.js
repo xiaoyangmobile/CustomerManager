@@ -34,7 +34,7 @@ Page({
         method: 'POST',
         header: {
           'content-type': 'application/json', // 默认值
-          'Authorization': 'Basic ZGx3ZF9jbGllbnQ6ZGx3ZF90b290aF9zZWNyZXQ='
+          'Authorization': 'Basic ZGx3ZF9jbGllbnQ6ZGx3ZF90b290aF9zZWNyZXQ=',
         },
         // data: {
         //   "username": this.data.phone,
@@ -47,7 +47,8 @@ Page({
         // },
         success(res) {
           console.log(res);
-          if (res.statusCode == 200) {
+          if (res.statusCode == 200 && res.data.error_code == undefined) {
+            getApp().access_token = res.data.access_token;
             // 跳转至index页面
             wx.switchTab({
               url: '/pages/home/home'

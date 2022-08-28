@@ -44,6 +44,14 @@ export function fetchRecordList(params) {
     return mockFetchRecordList(params);
   }
   return new Promise((resolve) => {
+    wx.request({
+      url: 'http://60.205.57.246:8088/dlwd-tooth/visitrecord/list',
+      method: 'GET',
+      'headers': {
+        'User-Agent': 'apifox/1.0.0 (https://www.apifox.cn)'
+      },
+      
+    })
     resolve('real api');
   });
 }

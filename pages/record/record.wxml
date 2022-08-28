@@ -36,15 +36,15 @@
 	</t-tabs>
 </view>
 <view wx:for="{{records}}" wx:key="index">
-  <view>
+  <view bindtap="toDetail" id="{{index}}">
     <view style="display: flex; flex-direction: row;padding:20rpx; align-items: center;">
       <t-icon name="user" size="small"/>
-      <view class="blue" style="padding-left: 30rpx;min-width: 200rpx;">{{item.name}}</view>
-      <view style="display: flex;justify-content: end;justify-content: end;width: 100%;flex-direction: row-reverse;">{{item.time}} {{item.action}}</view>
+      <view class="blue" style="padding-left: 30rpx;min-width: 200rpx;">{{item.contactName}}</view>
+      <view style="display: flex;justify-content: end;justify-content: end;width: 100%;flex-direction: row-reverse;">{{item.visitTime}}</view>
     </view>
     <view style="display: flex; flex-direction: row;padding:20rpx; align-items: center;">
       <t-icon name="mobile" size="small"/>
-      <view style="padding-left: 30rpx;">{{item.phone}}</view>
+      <view style="padding-left: 30rpx;">{{item.telephone}}</view>
       <view class="blue" style="display: flex;justify-content: end;font-size: small;width: 100%;flex-direction: row-reverse;">查看详情</view>
     </view>
     <view style="background: rgb(231, 231, 231); height: 1rpx;" />

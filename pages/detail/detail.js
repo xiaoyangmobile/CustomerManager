@@ -25,18 +25,46 @@ Page({
     },
     records: [],
     lastTime: '',
+    recordDetail: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    fetchRecordList().then((data) => {
-      this.setData({
-        records: data,
-        lastTime: data[0].time,
-      });
-    });
+    var id = options.id;
+    // fetchRecordList().then((data) => {
+    //   this.setData({
+    //     records: data,
+    //     lastTime: data[0].time,
+    //   });
+    // });
+
+    self = this;
+    wx.request({
+      url: 'http://60.205.57.246:8088/dlwd-tooth/visitrecord/detail2?id='+id,
+      method: 'GET',
+      header: {
+        'content-type': 'application/json', // 默认值
+        'Authorization': 'Basic ZGx3ZF9jbGllbnQ6ZGx3ZF90b290aF9zZWNyZXQ=',
+        'Dlwd-Auth': 'bearer ' + getApp().access_token,
+      },
+      success(res) {
+        if (res.data.code == 200) {
+          console.log(res);
+          self.setData({
+            recordDetail: res.data.data
+          })
+        }
+      },
+      fail () {
+        wx.showToast({
+          title: '网络请求失败',
+          icon: "none"
+        })
+      }
+    })
+
   },
 
   /**
@@ -115,7 +143,7 @@ Page({
 
   toCreateTarget() {
     wx.navigateTo({
-      url: '../createtarget/createtarget',
+      url: '../createtarget/createtarget?companyId='+this.data.recordDetail.companyId+'&contactId='+this.data.recordDetail.contactId,
     })
   },
 
